@@ -1,0 +1,20 @@
+module tb_DFF();
+reg clk;
+reg rst;
+reg a;
+reg b;
+
+wire y;
+wire z;
+
+initial
+  rst=1'b1;
+  
+always
+begin
+clk = 0;
+forever #40 clk = ~clk;
+end
+
+ endmodule
+

@@ -1,0 +1,14 @@
+module add4(
+   input [3:0] A ,
+	input [3:0] B ,
+	input sel , // 0: add, 1: subtract
+	output [3:0] S ,
+	output cout
+    );
+	 wire [2:0] c;
+   add1 a1(.A(A[0]),.B(B[0]),.sel(sel),.cin(sel),.sum(S[0]),.cout(c[0]));
+   add1 a2(.A(A[1]),.B(B[1]),.sel(sel),.cin(c[0]),.sum(S[1]),.cout(c[1]));
+   add1 a3(.A(A[2]),.B(B[2]),.sel(sel),.cin(c[1]),.sum(S[2]),.cout(c[2]));
+   add1 a4(.A(A[3]),.B(B[3]),.sel(sel),.cin(c[2]),.sum(S[3]),.cout(cout));
+	
+endmodule

@@ -1,0 +1,40 @@
+module add4t;
+reg [3:0] A;
+reg [3:0] B;
+reg sel;
+wire cout;
+wire [3:0] S;
+
+add4 full_A_S(.A(A),.B(B),.sel(sel),.S(S),.cout(cout));
+initial
+  begin
+  //A<B
+  sel=1'b0;
+  A=4'b0101;
+  B=4'b1010;
+  #100;
+  sel=1'b1;
+  A=4'b0101;
+  B=4'b1010;
+  #100;
+  //A=B
+  sel=1'b0;
+  A=4'b1010;
+  B=4'b1010;
+  #100;
+  sel=1'b1;
+  A=4'b1010;
+  B=4'b1010;
+  #100;
+  //A>B
+  sel=1'b0;
+  B=4'b0101;
+  A=4'b1010;
+  #100;
+  sel=1'b1;
+  B=4'b0101;
+  A=4'b1010;
+  $finish;
+	 end
+	 
+endmodule

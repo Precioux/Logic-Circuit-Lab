@@ -1,0 +1,26 @@
+module tadd;
+reg A;
+module add1(
+ input A,
+ input B,
+ input cin,
+ input sel,
+ output sum, 
+ output cout
+ );
+ 
+  wire  p,r,s,b,t;
+  
+   xor #(10) (b,B,sel); //b=B Xor sel
+	xor #(10) (p,A,b);  // A XOR b
+	xor #(10) (sum,p,cin); //CIN XOR(A XOR b)=sum
+ 
+	
+	and #(5) (s,A,b);    //Ab
+	or  #(5) (t,A,b);     //A+b
+	and #(5) (r,t,cin);  //CIN(A + b)
+	or  #(5) (cout,r,s);    // cout=CIN(A XOR b) +Ab
+ 
+
+
+endmodule
