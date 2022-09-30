@@ -5,5 +5,5 @@
   - [Samin Mahdipour](https://github.com/Precioux) <br />
   - [Amirhossein Poolad](https://github.com/AmirhosseinPoolad) <br />
   
-- Amirkabir University Of Technology
+- Amirkabir University of Technology
 - Spring 2021
